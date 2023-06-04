@@ -1,0 +1,97 @@
+*{
+    margin:0;
+    padding:0;
+    list-style-type: none;
+}
+/* NOTE THAT DISPLAY WAS NOT DECLARED AT ALL UNTIL @MEDIA SCREEN
+    BECAUSE BY DEFAULT DISPLAY IS SET TO BLOCK AND BY SETTING
+    CONTAINER HEIGHT TO 87PX WE CREATED AN OVERFLOW WE THEN SET
+    OVERFLOW TO HIDDEN*/
+.container{
+    background-color: rgb(27, 2, 37);
+    position:relative;
+    height: 87px;
+    overflow:hidden;
+    transition:0.5s;
+    box-shadow: 0 0 15px;
+}
+.list{
+    margin-top: 80px;
+}
+img{
+    position:absolute;
+    top:20px;
+    left:0;
+}
+.last{
+    border-bottom: solid 5px rgba(2, 63, 12, 0.548);
+    border-bottom-style:ridge;
+}
+a{
+    text-decoration: none;
+    color:white;
+    font-size: 28pt;
+    font-family: sans-serif;
+    text-align: right;
+}
+nav .list li{
+    padding:20px 35px;
+    transition:0.4s;
+}
+nav .list li a{
+    transition:0.4s;
+}
+nav .list li a:hover{
+    color:rgb(54, 241, 63);
+    margin-left: 20px;
+}
+
+nav .bars{
+    position:absolute;
+    top:0;
+    right:10px;
+    font-size: 50pt;
+    padding:10px;
+    color:white;
+    cursor:pointer;
+    transition:0.6s;
+}
+nav .bars:hover{
+    scale:1.12;
+}
+nav .bars:active{
+    transform:translateY(15px)
+}
+    /* THIS IS THE CLASS WE WILL BE ADDING AND WE ADD IT BECAUSE
+    WE WANT THE HEIGHT TO INCREASE AS WE CLICK THE BUTTON,
+    NOW WITH A BIGGER HEIGTH OUR OVERFLOWED LIST NOW SHOWS */
+.show{
+    height:550px;
+    transition:0.4s
+}
+    /* NOTE THAT AS WE INCREASE THE SCREEN SIZE WE SET 
+    DISPLAY TO FLEX AND JUSTIFY CONTENT TO SPACE-BETWEEN
+    WE ALSO SET .SHOW TO HEIGHT BACK TO 87PX */
+@media screen and (min-width:1200px){
+    .list{
+        display:flex;
+        justify-content: space-between;
+        transition:0.5s;
+        margin-left: 30rem;
+        margin-top: 0px;
+    }
+    .show{height:87px}
+    .last{
+        border-bottom:none;
+    }
+    nav .list li a{
+        transition:0.4s;
+    }
+    nav .list li a:hover{
+        color:rgb(54, 241, 63);
+        margin-left: 0px;
+    }
+    nav .bars{
+        transform: translateX(150px);
+    }
+}
